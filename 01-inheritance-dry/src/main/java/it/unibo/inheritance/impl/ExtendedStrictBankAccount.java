@@ -8,5 +8,21 @@ public class ExtendedStrictBankAccount extends SimpleBankAccount {
         super(id, balance);
     }
 
-    
+    public void chargeManagementFees(final int id) {
+        final double feeAmount = MANAGEMENT_FEE + getTransactionsCount() * TRANSACTION_FEE;
+        if (checkUser(id) && isWithdrawAllowed(feeAmount)) {
+            setBalance(getBalance() - feeAmount);
+            resetTransactions();
+        }
+    }
+
+    public void withdraw(final int id, final double amount) {
+        if (isWithdrawAllowed(amount)) {
+            withdraw(id, -amount);
+        }
+    }
+
+    private boolean isWithdrawAllowed(final double amount) {
+        return getBalance() >= amount;
+    }
 }
