@@ -18,7 +18,7 @@ public class ExtendedStrictBankAccount extends SimpleBankAccount {
 
     public void withdraw(final int id, final double amount) {
         if (isWithdrawAllowed(amount)) {
-            withdraw(id, -amount);
+            super.withdraw(id, -amount);
         }
     }
 
