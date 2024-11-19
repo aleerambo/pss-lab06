@@ -17,5 +17,11 @@ public class PasswordValidatorTest {
         assertFalse(PasswordValidator.checkLength("Short"));
         assertTrue(PasswordValidator.checkLength("VeryLongPassword"));
     }
+
+    @Test
+    public void containsACapitlLetter() {
+        assertFalse(PasswordValidator.checkUpperLetter("lower"));
+        assertTrue(PasswordValidator.checkUpperLetter("Upper"));
+    }
     
 }
