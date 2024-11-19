@@ -26,13 +26,17 @@ public class HelloJUnit5 {
     @Test
     public void allInOne() {
         for (int i = 1; i <= DIMENSION; i++) {
-            if ( (i % 3 == 0 && i % 5 == 0) || (String.valueOf(i).contains("3") && String.valueOf(i).contains("5")) ) {
+            String numberAsString = String.valueOf(i);
+            boolean contains3 = numberAsString.contains("3");
+            boolean contains5 = numberAsString.contains("5");
+
+            if ( (i % 3 == 0 && i % 5 == 0) || (contains3 && contains5) ) {
                 assertEquals("FizzBuzz", arrayFizzBuzz.getValue(i));
             } 
-            else if ( (i % 3 == 0) || (String.valueOf(i).contains("3")) ) {
+            else if ( (i % 3 == 0) || (contains3) ) {
                 assertEquals("Fizz", arrayFizzBuzz.getValue(i));
             } 
-            else if ( (i % 5 == 0) || (String.valueOf(i).contains("5")) ) {
+            else if ( (i % 5 == 0) || (contains5) ) {
                 assertEquals("Buzz", arrayFizzBuzz.getValue(i));
             } 
             else {
