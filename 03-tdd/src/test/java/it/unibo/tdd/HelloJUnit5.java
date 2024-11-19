@@ -30,11 +30,11 @@ public class HelloJUnit5 {
             boolean contains3 = numberAsString.contains("3");
             boolean contains5 = numberAsString.contains("5");
 
-            if ( (i % 3 == 0 && i % 5 == 0) || (contains3 && contains5) ) {
+            if ( (i % 3 == 0 || contains3) && (i % 5 == 0 || contains5) ) {
                 assertEquals("FizzBuzz", arrayFizzBuzz.getValue(i));
             } 
             else if ( (i % 3 == 0) || (contains3) ) {
-                assertEquals("Fizz", arrayFizzBuzz.getValue(i));
+                assertEquals("Fizz", arrayFizzBuzz.getValue(i), "i= "+i);
             } 
             else if ( (i % 5 == 0) || (contains5) ) {
                 assertEquals("Buzz", arrayFizzBuzz.getValue(i));
