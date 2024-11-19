@@ -13,7 +13,9 @@ public class PasswordValidatorTest {
     }
 
     @Test
-    public void simpleTest() {
+    public void charactersLengthTest() {
         assertFalse(PasswordValidator.checkLength("Short"));
+        assertTrue(PasswordValidator.checkLength("VeryLongPassword"));
     }
+    
 }
