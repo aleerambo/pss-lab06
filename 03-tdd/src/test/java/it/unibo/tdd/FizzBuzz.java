@@ -2,21 +2,20 @@ package it.unibo.tdd;
 
 public class FizzBuzz {
     public String getValue(int i) {
+        String initialString = "";
         String numberAsString = String.valueOf(i);
         boolean contains3 = numberAsString.contains("3");
         boolean contains5 = numberAsString.contains("5");
 
-        if ( (i % 3 == 0 && i % 5 == 0) || (contains3 && contains5) ) {
-            return "FizzBuzz";
+        if ( (i % 3 == 0) || (contains3) ) {
+            initialString += "Fizz";
         } 
-        else if ( (i % 3 == 0) || (contains3) ) {
-            return "Fizz";
-        } 
-        else if ( (i % 5 == 0) || (contains5) ) {
-            return "Buzz";
-        } 
-        else {
-            return String.valueOf(i);
+        if ( (i % 5 == 0) || (contains5) ) {
+            initialString += "Buzz";
         }
+        if (initialString.isEmpty()) {
+            return numberAsString;
+        }
+        return initialString;
     }
 }
