@@ -14,4 +14,14 @@ public class PasswordValidator {
         }
         return false;
     }
+
+    public static boolean checkLowerLetter(String password) {
+        for(int i=0; i<password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isLowerCase(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

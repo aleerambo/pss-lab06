@@ -24,4 +24,9 @@ public class PasswordValidatorTest {
         assertTrue(PasswordValidator.checkUpperLetter("Upper"));
     }
     
+    @Test
+    public void containsALowerLetter() {
+        assertFalse(PasswordValidator.checkLowerLetter("UPPERALL"));
+        assertTrue(PasswordValidator.checkLowerLetter("ONELOWEr"));
+    }
 }
