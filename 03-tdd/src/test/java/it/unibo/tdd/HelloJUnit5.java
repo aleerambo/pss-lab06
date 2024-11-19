@@ -41,4 +41,28 @@ public class HelloJUnit5 {
             }
         }
     }
+
+    @Test
+    public void testFizzBuzz() {
+        assertEquals("FizzBuzz", arrayFizzBuzz.getValue(15));
+        assertEquals("FizzBuzz", arrayFizzBuzz.getValue(30));
+    }
+
+    @Test
+    public void testFizz() {
+        assertEquals("Fizz", arrayFizzBuzz.getValue(3));
+        assertEquals("Fizz", arrayFizzBuzz.getValue(99));
+    }
+
+    @Test
+    public void testBuzz() {
+        assertEquals("Buzz", arrayFizzBuzz.getValue(5));
+        assertEquals("Buzz", arrayFizzBuzz.getValue(100));
+    }
+
+    @Test
+    public void number() {
+        assertEquals(String.valueOf(1), arrayFizzBuzz.getValue(1));
+        assertEquals(String.valueOf(2), arrayFizzBuzz.getValue(2));
+    }
 }
