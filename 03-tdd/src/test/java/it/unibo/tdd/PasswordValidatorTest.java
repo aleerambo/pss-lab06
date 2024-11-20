@@ -13,6 +13,12 @@ public class PasswordValidatorTest {
     }
 
     @Test
+    public void allInOne() {
+        assertFalse(PasswordValidator.check("badpsw"));
+        assertTrue(PasswordValidator.check("_AG00dPsw_"));
+    }
+
+    @Test
     public void charactersLengthTest() {
         assertFalse(PasswordValidator.checkLength("Short"));
         assertTrue(PasswordValidator.checkLength("VeryLongPassword"));

@@ -43,4 +43,17 @@ public class PasswordValidator {
         }
         return false;
     }
+
+    public static boolean check(String password) {
+        if(
+            checkLength(password) &&
+            checkUpperLetter(password) &&
+            checkLowerLetter(password) &&
+            checkNumber(password) &&
+            checkUnderscore(password)
+        ) {
+            return true;
+        }
+        return false;
+    }
 }
