@@ -34,4 +34,13 @@ public class PasswordValidator {
         }
         return false;
     }
+
+    public static boolean checkUnderscore(String password) {
+        for(int i=0; i<password.length(); i++) {
+            if (password.charAt(i) == '_') {
+                return true;
+            }
+        }
+        return false;
+    }
 }

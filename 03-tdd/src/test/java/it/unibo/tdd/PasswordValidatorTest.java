@@ -35,4 +35,10 @@ public class PasswordValidatorTest {
         assertFalse(PasswordValidator.checkNumber("thereIsNoNumber"));
         assertTrue(PasswordValidator.checkNumber("1Number"));
     }
+
+    @Test
+    public void containsAnUnderscore() {
+        assertFalse(PasswordValidator.checkUnderscore("thereIsNoUnderscore"));
+        assertTrue(PasswordValidator.checkUnderscore("Underscore_"));
+    }
 }
