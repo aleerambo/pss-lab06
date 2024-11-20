@@ -29,4 +29,10 @@ public class PasswordValidatorTest {
         assertFalse(PasswordValidator.checkLowerLetter("UPPERALL"));
         assertTrue(PasswordValidator.checkLowerLetter("ONELOWEr"));
     }
+
+    @Test
+    public void containsANumber() {
+        assertFalse(PasswordValidator.checkNumber("thereIsNoNumber"));
+        assertTrue(PasswordValidator.checkNumber("1Number"));
+    }
 }
